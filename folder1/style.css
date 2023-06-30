@@ -1,0 +1,148 @@
+html {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: 2fr 1fr 5fr 1fr;
+  grid-template-areas: 'header header header'
+                        'main main main'
+                        'feature feature aside'
+                        'footer footer footer';
+}
+
+header {
+  background-color: rgba(0, 157, 255, 0.863);
+  color: rgb(16, 15, 15);
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-size: 30px;
+  grid-area: header;
+}
+
+main {
+  text-align: center;
+  background: rgb(220, 220, 206);
+  color: rgb(16, 1, 1);
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-area:main;
+}
+
+.feature {
+  text-align: center;
+  background: rgba(194, 161, 12, 0.817);
+  color: rgb(16, 15, 15);
+  grid-column-start: 1;
+  grid-column-end: 3;
+  
+  justify-content: center; /* Center items horizontally */
+  grid-area:feature;
+ 
+  
+}
+
+aside {
+  text-align: center;
+  background-color: rgb(241, 114, 79);
+  color: white;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-area:aside;
+}
+
+footer {
+  background-color: rgba(16, 169, 234, 0.893);
+  color: rgb(16, 15, 15);
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-size: 30px;
+  grid-area:footer;
+}
+
+ul {
+  justify-content: center;
+  margin-left: 0;
+  padding-left: 0;
+  display: grid; /* Add grid layout to menu section */
+  justify-items: center; /* Center items horizontally */
+  grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
+}
+
+li {
+  display: inline-block;
+  margin-left: 20px; /* Adjust the margin as desired */
+}
+
+.featureli {
+  
+  border: 2px red dashed;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 80px;
+  margin-right: 80px;
+  grid-template-columns:repeat(3, 1fr);
+  background-color: greenyellow;
+}
+@media (max-width: 767px) {
+  body {
+    
+  grid-template-areas:
+  'header header header'
+  'main main main'
+  'feature feature feature'
+  'footer footer footer';
+ } 
+aside{
+  display: none;
+}
+ ul {
+  display: block; /* 使用 block 元素來垂直排列項目 */
+  text-align: center; /* 將項目置中對齊 */
+}
+li {
+  display: block; /* 使用 block 元素來垂直排列項目 */
+  margin: 10px 0; /* 調整項目之間的垂直間距 */
+}
+.featureli{
+  background-color: rgb(167, 13, 136);
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px)  {
+  body {
+    grid-template-areas:
+    'header header header'
+    'main main main'
+    'feature feature aside'
+    'footer footer footer';
+  } 
+  
+  ul {
+    display: block; /* 使用 block 元素來垂直排列項目 */
+    text-align: center; /* 將項目置中對齊 */
+  }
+  li {
+    display: block; /* 使用 block 元素來垂直排列項目 */
+    margin: 10px 0; /* 調整項目之間的垂直間距 */
+  }
+  
+  .featureli{
+    background-color: rgb(245, 241, 13);
+    display:inline;
+  }
+  #feature3 {
+    
+    position: absolute;
+    bottom: 50%;
+    right:50%;
+    
+  }
+  
+}
+
